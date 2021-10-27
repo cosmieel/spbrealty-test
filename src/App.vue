@@ -1,26 +1,53 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="cart">
+    <header class="cart__header">
+      <cart-header />
+    </header>
+    <main class="cart__body">
+      <cart-body />
+    </main>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CartBody from "@/components/CartBody.vue";
+import CartHeader from "@/components/CartHeader.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    CartBody,
+    CartHeader,
   },
 };
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f6f4;
+  color: #000000;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+  font-family: "PT Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 100vh;
+}
+
+.cart {
+  max-width: 1050px;
+  padding: 89px 24px 84px;
+  margin: 0 auto;
 }
 </style>
